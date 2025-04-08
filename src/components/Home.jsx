@@ -1,9 +1,7 @@
 import React from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 
-
-export const Home = () => {
-
+const Home = () => {
   const navigate = useNavigate()
 
   return (
@@ -40,7 +38,7 @@ export const Home = () => {
       >
         Navigate to /not-found
       </button>
-
+      
       <button
         onClick={() => navigate('/not-found')}
         className='px-4 py-2 bg-yellow-400 text-gray-800 rounded hover:bg-yellow-500 mb-2'
@@ -57,3 +55,5 @@ export const Home = () => {
     </div>
   )
 }
+
+export default Home

@@ -33,7 +33,7 @@ const ProfileCreate = () => {
     <div className='min-h-screen flex items-center justify-center bg-gray-800'>
       <div className='max-w-md w-full p-6 rounded'>
         <h2 className='text-2xl font-bold text-center text-white mb-4'>
-          Createa a new Profile
+          Crea tu Perfil Profesional
         </h2>
         {/* error  */}
         {error && (
@@ -60,21 +60,21 @@ const ProfileCreate = () => {
           />
             <input
               type='text'
-              placeholder='description'
+              placeholder='Tú Profesión'
               value={direction}
               onChange={(e) => setDirection(e.target.value)}
               className='p-2 rounded bg-gray-700 text-white'
             />
           <input
             type='text'
-            placeholder='description'
+            placeholder='Descripcióin'
             value={description}
             onChange={(e) => setDescription(e.target.value)}
             className='p-2 rounded bg-gray-700 text-white'
           />
           <input
             type='text'
-            placeholder='description'
+            placeholder='Número de Contacto'
             value={phone}
             onChange={(e) => setPhone(e.target.value)}
             className='p-2 rounded bg-gray-700 text-white'
@@ -83,14 +83,14 @@ const ProfileCreate = () => {
             type='submit'
             className='bg-blue-500 text-white p-2 rounded hover:bg-blue-600 transition duration-200'
           >
-            Create Profile
+            Crea Perfil
           </button>
 
           <button
             onClick={() => navigate('/profiles')}
             className='bg-gray-500 text-white p-2 rounded hover:bg-gray-600 transition duration-200'
           >
-            Back to Profiles
+            Volver a todos
           </button>
         </form>
       </div>

@@ -1,5 +1,6 @@
 import axios from "axios";
 import { createContext, useContext, useEffect, useState } from "react";
+import { toast } from "react-toastify";
 
 const ProfileContext = createContext()
 
@@ -10,6 +11,7 @@ const API = "https://67efcb152a80b06b8895c767.mockapi.io/api/v1/profile"
 export const ProfileProvider = ({ children }) => {
   const [profiles, setProfiles] = useState([])
   const [loading, setLoading] = useState(false)
+  const [error, setError] = useState(null)
 
   const fetchProfiles = async () => {
     setLoading(true)
@@ -22,6 +24,26 @@ export const ProfileProvider = ({ children }) => {
       setLoading(false)
     }
   }
+
+  // Busqueda
+  const getPersonajes = async (name) => {
+    toast.info('Buscando Personajes...')
+    setLoading(true)
+    setError(null)
+    try {
+        const data = await fetchData(name)
+        console.log('desde context', data.data.results);
+        setProfiles(data)
+        toast.success(' Data featched successfully ')
+    } catch (error) {
+        toast.error(`No se encontró Personajes ${error}`)
+        setProfiles(null)
+    } finally {
+        setLoading(false)
+    }
+}
+
+
 
   // POST fn
   const createProfile = async (profile) => {
@@ -49,7 +71,7 @@ export const ProfileProvider = ({ children }) => {
   }, [])
 
   return (
-    <ProfileContext.Provider value={{ profiles, loading, createProfile, updateProfile, deleteProfile }}>
+    <ProfileContext.Provider value={{ profiles, loading, getPersonajes, createProfile, updateProfile, deleteProfile }}>
       {children}
     </ProfileContext.Provider>
   )

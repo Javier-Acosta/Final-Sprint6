@@ -68,21 +68,21 @@ const ProfileEdit = () => {
           />
           <input
             type="text"
-            placeholder="URL del avatar"
+            placeholder="Descripción"
             value={description}
             onChange={(e) => setDescription(e.target.value)}
-            className="p-2 rounded bg-gray-700 text-white"
+            className="p-2 rounded bg-gray-700 text-white caret-pink-500 "
           />
           <input
             type="text"
-            placeholder="URL del avatar"
+            placeholder="Número de contacto"
             value={phone}
             onChange={(e) => setPhone(e.target.value)}
             className="p-2 rounded bg-gray-700 text-white"
           />
           <input
             type="text"
-            placeholder="URL del avatar"
+            placeholder="Tú profesión"
             value={direction}
             onChange={(e) => setDirection(e.target.value)}
             className="p-2 rounded bg-gray-700 text-white"

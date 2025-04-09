@@ -19,6 +19,13 @@ const Home = () => {
       </button>
 
       <button
+        onClick={() => navigate('/Buscar')}
+        className='px-4 py-2 bg-yellow-400 text-gray-800 rounded hover:bg-yellow-500 mb-2'
+      >
+      Buscar
+      </button>
+
+      <button
         onClick={() => navigate('/media')}
         className='px-4 py-2 bg-yellow-400 text-gray-800 rounded hover:bg-yellow-500 mb-2'
       >

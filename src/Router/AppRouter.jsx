@@ -8,6 +8,7 @@ import ProfileSelector from '../components/ProfileSelector'
 import ProfileDetail from '../components/ProfileDetail'
 import ProfileCreate from '../components/ProfileCreate'
 import ProfileEdit from '../components/ProfileEdit'
+import SearchForm from '../components/SearchForm'
 
 const AppRouter = () => {
   const navigate = useNavigate()
@@ -36,6 +37,7 @@ const AppRouter = () => {
 
         {/* rutas dinámicas  */}
         <Route path='/profiles' element={<ProfileSelector />} />
+        <Route path='/buscar' element={<SearchForm />} />
         <Route path='/profiles/:id' element={<ProfileDetail />} />
         <Route path='/profiles/create-profile' element={<ProfileCreate />} />
         <Route path='/profiles/:id/edit' element={<ProfileEdit />} />

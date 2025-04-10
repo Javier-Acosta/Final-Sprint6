@@ -36,7 +36,7 @@ const ProfileDetail = () => {
     }
   }
 
-  if (!profile) return <p>Perfil no encontrado 😿</p>
+  if (!profile) return <p>Perfil no encontrado </p>
 
   return (
     <div className='text-center mt-10'>

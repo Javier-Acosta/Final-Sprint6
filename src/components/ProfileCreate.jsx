@@ -7,7 +7,7 @@ const ProfileCreate = () => {
   const [avatar, setAvatar] = useState('')
   const [description, setDescription] = useState('')
   const [direction, setDirection] = useState('')
-    const [phone, setPhone] = useState('')
+  const [phone, setPhone] = useState('')
   const [error, setError] = useState('')
 
   const navigate = useNavigate()
@@ -21,7 +21,7 @@ const ProfileCreate = () => {
     }
 
     try {
-      await createProfile({ name, avatar , description , direction, phone})
+      await createProfile({ name, avatar, description, direction, phone })
       navigate('/profiles')
     } catch (err) {
       setError('Error creating profile')
@@ -35,11 +35,11 @@ const ProfileCreate = () => {
         <h2 className='text-2xl font-bold text-center text-white mb-4'>
           Crea tu Perfil Profesional
         </h2>
-        {/* error  */}
+
         {error && (
           <p className="text-red-400 mb-2">{error}</p>
         )}
-        {/* form  */}
+
         <form
           onSubmit={handleSubmit}
           className='flex flex-col gap-4'
@@ -58,13 +58,13 @@ const ProfileCreate = () => {
             onChange={(e) => setAvatar(e.target.value)}
             className='p-2 rounded bg-gray-700 text-white'
           />
-            <input
-              type='text'
-              placeholder='Tú Profesión'
-              value={direction}
-              onChange={(e) => setDirection(e.target.value)}
-              className='p-2 rounded bg-gray-700 text-white'
-            />
+          <input
+            type='text'
+            placeholder='Tú Profesión'
+            value={direction}
+            onChange={(e) => setDirection(e.target.value)}
+            className='p-2 rounded bg-gray-700 text-white'
+          />
           <input
             type='text'
             placeholder='Descripcióin'

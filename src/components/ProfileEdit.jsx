@@ -3,7 +3,6 @@ import { useNavigate, useParams } from 'react-router-dom'
 import { useProfiles } from '../contexts/ProfileContext'
 
 const ProfileEdit = () => {
-  // estados
   const [name, setName] = useState('')
   const [avatar, setAvatar] = useState('')
   const [description, setDescription] = useState('')
@@ -11,7 +10,7 @@ const ProfileEdit = () => {
   const [phone, setPhone] = useState('')
   const [error, setError] = useState('')
 
-  // otros hooks
+
   const navigate = useNavigate()
   const { profiles, updateProfile } = useProfiles()
   const { id } = useParams()

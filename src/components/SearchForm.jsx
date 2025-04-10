@@ -11,12 +11,7 @@ const SearchForm = () => {
 
     return (
         <div className='min-h-screen flex flex-col items-center justify-center bg-black/90 text-white'>
-
-            <h1 className='text-2xl font-bold mb-6' >Filtrado por Profesión</h1>
-
-
-
-            {/* contededor de cards */}
+            <h2 className='text-2xl font-bold mb-6' >Oficios y Profesión </h2>      
             <div className='mt-5 flex flex-wrap gap-6 justify-center mx-10'>
                 {profiles.map((profile) => (
                     <ProfileServicio
@@ -26,13 +21,10 @@ const SearchForm = () => {
                         description={profile.description}
                         direction={profile.direction}
                         phone={profile.phone}
-                        onClick={() => navigate(`/profiles/${profile.id}`)}
+                        onClick={() => navigate(`/vista/${profile.id}`)}
                     />
                 ))}
-
-
             </div>
-
             <button onClick={() => navigate('/')} className='mt-8 px-6 py-2 font-semibold bg-gray-800 hover:bg-gray-700 rounded-lg'>
                 Volver a Inicio
             </button>

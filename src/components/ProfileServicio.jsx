@@ -12,7 +12,7 @@ const ProfileServicio = ({direction, avatar, onClick}) => {
           alt='profile'
           className='w-24 h-24 rounded-lg shadow-md'
         />
-        <p className='text-blue-600 dark:text-sky-400 mt-2 text-white text-2xl font-semibold'>{direction}</p>
+        <p className='text-blue-400 shadow-xl dark:text-sky-400 mt-2 text-2xl font-semibold'>{direction}</p>
       </div>
     )
 }

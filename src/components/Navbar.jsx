@@ -34,8 +34,8 @@ const Navbar = () => {
                                     className="rounded-md bg-gray-900 px-3 py-2 text-sm font-medium text-white">Home</a>
                                 <a  onClick={() => navigate('/buscar')}
                                     className="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Bolsa de Trabajo</a>
-                                <a  onClick={() => navigate('/buscar')}
-                                    className="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Projects</a>
+                                <a  onClick={() => navigate('/profiles')}
+                                    className="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Editar Perfiles</a>
                                 <a  onClick={() => navigate('/about')}
                                     className="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">About</a>
                             </div>

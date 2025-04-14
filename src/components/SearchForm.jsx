@@ -10,7 +10,7 @@ const SearchForm = () => {
 
 
     return (
-        <div className='min-h-screen flex flex-col items-center justify-center bg-black/90 text-white'>
+        <div className='min-h-screen flex flex-col items-center justify-center bg-black/90 text-white '>
             <h2 className='text-2xl font-bold mb-6' >Oficios y Profesión </h2>      
             <div className='mt-5 flex flex-wrap gap-6 justify-center mx-10'>
                 {profiles.map((profile) => (

@@ -5,7 +5,7 @@ const ProfileCard = ({ name, description, direction, phone, avatar, onClick }) =
   return (
     <div
       onClick={onClick}
-      className='bg-white dark:bg-gray-800 rounded-lg px-6 py-8 ring ring-gray-900/5 shadow-xl max-w-64 flex flex-col items-center cursor-pointer transition-transform hover:scale-105 '
+      className='bg-gray-800 dark:bg-gray-800 rounded-lg px-6 py-8 ring ring-gray-900/5 shadow-xl max-w-64 flex flex-col items-center cursor-pointer transition-transform hover:scale-105 '
     >
       <img
         src={avatar}

@@ -13,11 +13,11 @@ const ProfileVista = () => {
     console.log('profiles', profile);
 
     return (
-        <div className='text-center mt-10'>
-            <h1> Vista</h1>
+        <div className='min-h-screen flex flex-col text-center  items-center justify-center  bg-black/90 text-white '>
+
             <img
                 src={profile.avatar}
-                className='w-50 h-50 rounded-lg shadow-md mx-auto'
+                className='w-50 h-50 rounded-lg shadow-md mx-auto '
             />
 
             <h1 className='text-3xl font-bold'>{profile.name}</h1>
@@ -28,7 +28,7 @@ const ProfileVista = () => {
                 onClick={() => navigate('/')}
                 className='mt-8 px-6 py-2 font-semibold text-white bg-gray-800 hover:bg-gray-700 rounded-lg'
             >
-                Back Home
+                Volver Inicio
             </button>
         </div >
     )

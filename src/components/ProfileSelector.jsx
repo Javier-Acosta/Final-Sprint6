@@ -10,18 +10,18 @@ const ProfileSelector = () => {
   const navigate = useNavigate()
 
   return (
-    <div className='min-h-screen flex flex-col items-center justify-center bg-black/90 text-white'>
+    <div className='min-h-screen flex flex-col items-center justify-center bg-gray-900 text-white'>
 
       <h1 className='text-2xl font-bold mb-6' >Oficio y Profesión</h1>
 
-      <div onClick={() => navigate('/profiles/create-profile')} className='bg-white dark:bg-gray-800 rounded-lg px-6 py-8 ring ring-gray-900/5 shadow-xl max-w-64 flex flex-col items-center cursor-pointer transition-transform hover:scale-105'>
+      <div onClick={() => navigate('/profiles/create-profile')} className='bg-gray-800 dark:bg-gray-800 rounded-lg px-6 py-8 ring ring-gray-900/5 shadow-xl max-w-64 flex flex-col items-center cursor-pointer transition-transform hover:scale-105'>
         <div className='w-24 h-24 flex items-center justify-center bg-gray-700 rounded-lg shadow-md'>
           <span className='text-4xl font-bold' >+</span>
         </div>
         <p className='mt-2 text-sm font-semibold'>Suscríbete</p>
       </div>
 
-      <div className='mt-5 flex flex-wrap gap-6 justify-center mx-10'>
+      <div className='mt-5 flex flex-wrap gap-6 justify-center mx-10 '>
         {profiles.map((profile) => (
           <ProfileCard
             key={profile.id}

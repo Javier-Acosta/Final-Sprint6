@@ -14,9 +14,10 @@ const ProfileVista = () => {
 
     return (
         <div className='text-center mt-10'>
+            <h1> Vista</h1>
             <img
                 src={profile.avatar}
-                className='w-24 h-24 rounded-lg shadow-md mx-auto'
+                className='w-50 h-50 rounded-lg shadow-md mx-auto'
             />
 
             <h1 className='text-3xl font-bold'>{profile.name}</h1>

@@ -15,6 +15,7 @@ const AppRouter = () => {
   const navigate = useNavigate()
   return (
     <>
+    
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/media' element={

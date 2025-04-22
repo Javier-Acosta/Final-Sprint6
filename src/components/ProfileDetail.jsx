@@ -5,7 +5,6 @@ import { toast } from 'react-toastify'
 import Swal from 'sweetalert2'
 
 const ProfileDetail = () => {
-  console.log(useParams())
   const { id } = useParams()
   const { profiles, deleteProfile } = useProfiles()
   const navigate = useNavigate()
@@ -27,7 +26,7 @@ const ProfileDetail = () => {
     if (result.isConfirmed) {
       try {
         await deleteProfile(id)
-        toast.success('Profile deleted successfully')
+        toast.error('Profile deleted successfully')
         navigate('/profiles')
       } catch (err) {
         toast.error('Error deleting profile')
@@ -39,10 +38,10 @@ const ProfileDetail = () => {
   if (!profile) return <p>Perfil no encontrado </p>
 
   return (
-    <div className='text-center mt-10'>
+    <div className='min-h-screen flex flex-col text-center  items-center justify-center  bg-gray-900 text-gray-200'>
       <img
         src={profile.avatar}
-        className='w-24 h-24 rounded-lg shadow-md mx-auto'
+        className='w-50 h-50 rounded-lg shadow-md mx-auto'
       />
       <h1 className='text-3xl font-bold'>{profile.name}</h1>
       <p className='text-gray-400'>{profile.id}</p>
@@ -53,19 +52,19 @@ const ProfileDetail = () => {
         onClick={() => navigate('/profiles')}
         className='mt-8 px-6 py-2 font-semibold text-white bg-gray-800 hover:bg-gray-700 rounded-lg'
       >
-        Back
+        Volver
       </button>
       <button
         onClick={() => navigate(`/profiles/${profile.id}/edit/`)}
         className='mt-8 px-6 py-2 font-semibold text-white bg-blue-800 hover:bg-blue-700 rounded-lg ml-2'
       >
-        Edit Profile
+        Editar Perfil
       </button>
       <button
         onClick={handleDelete}
         className='mt-8 px-6 py-2 font-semibold text-white bg-red-800 hover:bg-red-700 rounded-lg ml-2'
       >
-        Delete Profile
+        Eliminar Perfil
       </button>
     </div >
   )

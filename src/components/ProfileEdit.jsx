@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import { useProfiles } from '../contexts/ProfileContext'
+import {toast} from 'react-toastify'
 
 const ProfileEdit = () => {
   const [name, setName] = useState('')
@@ -8,14 +9,11 @@ const ProfileEdit = () => {
   const [description, setDescription] = useState('')
   const [direction, setDirection] = useState('')
   const [phone, setPhone] = useState('')
-  const [error, setError] = useState('')
-
 
   const navigate = useNavigate()
   const { profiles, updateProfile } = useProfiles()
   const { id } = useParams()
 
-  // setear el nombre y avatar del perfil a editar con el id de la url
   useEffect(() => {
     const currentProfile = profiles.find((profile) => profile.id === id)
     if (currentProfile) {
@@ -27,29 +25,29 @@ const ProfileEdit = () => {
     }
   }, [profiles, id])
 
-
   const handleSubmit = async (e) => {
     e.preventDefault()
 
     if (name.trim() === '' || avatar.trim() === '' || description.trim() === '' || direction.trim() === '' || phone.trim() === '') {
-      setError('Please fill in all fields')
+      toast.error('Please fill in all fields')
       return
     }
 
     try {
       await updateProfile(id, { name, avatar, description, direction, phone })
       navigate(`/profiles/${id}`)
+      toast.success('Perfil editado successfully')
     } catch (err) {
-      setError('Error updating profile')
-      console.log('err -> ', err)
+      
+      toast.error('Error updating profile')
     }
   }
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-800">
+    <div className="min-h-screen flex items-center justify-center bg-gray-900 text-gray-200">
       <div className="max-w-md w-full bg-gray-800 p-6 rounded">
         <h2 className="text-2xl font-bold text-white mb-4">Editar perfil</h2>
-        {error && <p className="text-red-400 mb-2">{error}</p>}
+        
         <form onSubmit={handleSubmit} className="flex flex-col gap-4">
           <input
             type="text"

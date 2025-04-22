@@ -10,10 +10,9 @@ const ProfileVista = () => {
     const navigate = useNavigate()
 
     const profile = profiles.find((p) => p.id === id)
-    console.log('profiles', profile);
 
     return (
-        <div className='min-h-screen flex flex-col text-center  items-center justify-center  bg-black/90 text-white '>
+        <div className='min-h-screen flex flex-col text-center  items-center justify-center  bg-gray-900 text-gray-200'>
 
             <img
                 src={profile.avatar}
@@ -28,7 +27,7 @@ const ProfileVista = () => {
                 onClick={() => navigate('/')}
                 className='mt-8 px-6 py-2 font-semibold text-white bg-gray-800 hover:bg-gray-700 rounded-lg'
             >
-                Volver Inicio
+                Volver a Inicio
             </button>
         </div >
     )

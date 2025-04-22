@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useProfiles } from '../contexts/ProfileContext'
+import { toast } from 'react-toastify'
 
 const ProfileCreate = () => {
   const [name, setName] = useState('')
@@ -8,7 +9,6 @@ const ProfileCreate = () => {
   const [description, setDescription] = useState('')
   const [direction, setDirection] = useState('')
   const [phone, setPhone] = useState('')
-  const [error, setError] = useState('')
 
   const navigate = useNavigate()
   const { createProfile } = useProfiles()
@@ -16,16 +16,17 @@ const ProfileCreate = () => {
   const handleSubmit = async (e) => {
     e.preventDefault()
     if (name.trim() === '' || avatar.trim() === '' || description.trim() === '' || direction.trim() === '' || phone.trim() === '') {
-      setError('Please fill in all fields')
+      // setError('Please fill in all fields')
+      toast.error('Please fill in all fields')
       return
     }
 
     try {
       await createProfile({ name, avatar, description, direction, phone })
       navigate('/profiles')
+      toast.success('Perfil creado successfully')
     } catch (err) {
-      setError('Error creating profile')
-      console.log('err -> ', err)
+      toast.error('Error creating profile')
     }
   }
 
@@ -35,10 +36,6 @@ const ProfileCreate = () => {
         <h2 className='text-2xl font-bold text-center text-white mb-4'>
           Crea tu Perfil Profesional
         </h2>
-
-        {error && (
-          <p className="text-red-400 mb-2">{error}</p>
-        )}
 
         <form
           onSubmit={handleSubmit}

@@ -24,7 +24,7 @@ const Navbar = () => {
                     </div>
                     <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
                         <div className="flex shrink-0 items-center">
-                            <img className="h-8 w-auto" src="https://tailwindcss.com/plus-assets/img/logos/mark.svg?color=indigo&shade=500" alt="Your Company" />
+                            <img className="h-10 w-auto" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQhd9_Ex7Ydx9zq3UOGPQWisRDk1m5BFhQ4Vw&s" alt="Your Company" />
 
                         </div>
                         <div className="hidden sm:ml-6 sm:block cursor-pointer">

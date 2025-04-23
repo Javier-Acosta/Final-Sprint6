@@ -31,10 +31,10 @@ const ProfileCreate = () => {
   }
 
   return (
-    <div className='min-h-screen flex items-center justify-center bg-gray-800'>
+    <div className='min-h-screen flex items-center justify-center bg-gray-900 text-gray-200'>
       <div className='max-w-md w-full p-6 rounded'>
         <h2 className='text-2xl font-bold text-center text-white mb-4'>
-          Crea tu Perfil Profesional
+          Crea Perfil de Profesión
         </h2>
 
         <form

@@ -17,3 +17,6 @@ npm run dev
 ✔ Paginación para datos públicos
 ✔ Rutas implementada react-router-dom
  
+
+
+ video 37:40

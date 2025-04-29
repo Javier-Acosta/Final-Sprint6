@@ -1,14 +1,16 @@
-import React, { Suspense } from 'react';
+import React from 'react';
 import { useForm } from 'react-hook-form';
 import { useAuth } from '../contexts/AuthContext';
 import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
     const { register, handleSubmit, formState: { errors } } = useForm()
-    const { Login } = useAuth()
+    const {login } = useAuth()
     const navigate= useNavigate()
     const onSubmit = async (data) => {
-       const success =await Login(data.email, data.password)
+        console.log(data);
+        
+       const success = await login(data.email, data.name)
        console.log(success)
        if (success) {
         navigate('/busqueda')
@@ -35,7 +37,7 @@ const Login = () => {
                     type='password'
                     className='w-full border p-2 rounded'
                 />
-                {errors.password && <p className='text-red-500 text-sm' > {errors.password.message}</p>}
+                {errors.name && <p className='text-red-500 text-sm' > {errors.name.message}</p>}
 
                 <button
                     type="submit"

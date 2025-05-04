@@ -11,11 +11,9 @@ import ProfileVista from '../pages/ProfileVista'
 import Login from '../pages/Login'
 import PrivateRoute from './PrivateRoute'
 
-
 const AppRouter = () => {
   return (
     <>
-
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/about' element={<About />} />
@@ -27,12 +25,24 @@ const AppRouter = () => {
           }
         />
 
-
         <Route path='/buscar' element={<SearchForm />} />
 
-        <Route path='/vista/:id' element={<ProfileVista />}/>
+        <Route path='/vista/:id'
+          element={
+            <PrivateRoute>
+              <ProfileVista />
+            </PrivateRoute>
+          }
+        />
 
-        <Route path='/profiles/:id' element={<ProfileDetail />} />
+        <Route path='/profiles/:id'
+          element={
+            <PrivateRoute>
+              <ProfileDetail />
+            </PrivateRoute>
+          }
+        />
+
         <Route path='/profiles/create-profile'
           element={
             <PrivateRoute>
@@ -40,8 +50,15 @@ const AppRouter = () => {
             </PrivateRoute>
           }
         />
-        
-        <Route path='/profiles/:id/edit' element={<ProfileEdit />} />
+
+        <Route path='/profiles/:id/edit'
+          element={
+            <PrivateRoute>
+              <ProfileEdit />
+            </PrivateRoute>
+
+          }
+        />
         <Route path='/login' element={<Login />} />
         <Route path="*" element={<Navigate to="/" replace />} />
 

@@ -5,7 +5,7 @@ git clone [https://github.com/Javier-Acosta/sprint5.git]
 
 Instala las dependencias:
 
-npm install axios react-router-dom @tailwindcss/vite jwt-decode react-hook-form react-toastify sweetalert2 mongoose
+npm install axios react-router-dom @tailwindcss/vite jwt-decode react-hook-form react-toastify sweetalert2 mongoose sweetalert2-react-content
 
 Inicia el servidor:
 

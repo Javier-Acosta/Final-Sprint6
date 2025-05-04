@@ -9,6 +9,7 @@ import ProfileEdit from '../pages/ProfileEdit'
 import SearchForm from '../pages/SearchForm'
 import ProfileVista from '../pages/ProfileVista'
 import Login from '../pages/Login'
+import PrivateRoute from './PrivateRoute'
 
 
 const AppRouter = () => {
@@ -18,11 +19,27 @@ const AppRouter = () => {
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/about' element={<About />} />
-        <Route path='/profiles' element={<ProfileSelector />} />
+        <Route path='/profiles'
+          element={
+            <PrivateRoute>
+              <ProfileSelector />
+            </PrivateRoute>
+          }
+        />
+
         <Route path='/buscar' element={<SearchForm />} />
-        <Route path='/vista/:id' element={<ProfileVista />} />
+
+        <Route path='/vista/:id' element={<ProfileVista />}/>
+
         <Route path='/profiles/:id' element={<ProfileDetail />} />
-        <Route path='/profiles/create-profile' element={<ProfileCreate />} />
+        <Route path='/profiles/create-profile'
+          element={
+            <PrivateRoute>
+              <ProfileCreate />
+            </PrivateRoute>
+          }
+        />
+        
         <Route path='/profiles/:id/edit' element={<ProfileEdit />} />
         <Route path='/login' element={<Login />} />
         <Route path="*" element={<Navigate to="/" replace />} />

@@ -1,8 +1,13 @@
 import React, { useState } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
+import { useAuth } from '../contexts/AuthContext'
+import PrivateRoute from '../Router/PrivateRoute'
+import { can } from '../utils/permissions'
 
 const Navbar = () => {
+    const { user, logout } = useAuth()
     const navigate = useNavigate()
+
 
     const [isOpen, setIsOpen] = useState(false)
     const toggleMenu = () => {
@@ -56,7 +61,7 @@ const Navbar = () => {
                                 className='w-6 h6'
                                 fill='none'
                                 stroke='currentColor'
-                                viewBox='0 0 24 24' 
+                                viewBox='0 0 24 24'
                             >
                                 {
                                     isOpen ? (
@@ -65,7 +70,7 @@ const Navbar = () => {
                                             strokeLinecap='round'
                                             strokeLinejoin='round'
                                             strokeWidth={2}
-                                            d='M6 18L18 6M6 6l12 12' 
+                                            d='M6 18L18 6M6 6l12 12'
                                         />
                                     ) : (
 
@@ -73,7 +78,7 @@ const Navbar = () => {
                                             strokeLinecap='round'
                                             strokeLinejoin='round'
                                             strokeWidth={2}
-                                            d='M4 6h16M4 12h16M4 18h16' 
+                                            d='M4 6h16M4 12h16M4 18h16'
                                         />
                                     )
                                 }
@@ -92,17 +97,42 @@ const Navbar = () => {
 
                                 <a onClick={() => navigate('/')}
                                     className="rounded-md bg-gray-900 px-3 py-2 text-sm font-medium text-white">Home</a>
+                                    
                                 <a onClick={() => navigate('/buscar')}
                                     className="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Bolsa de Trabajo</a>
-                                <a onClick={() => navigate('/profiles')}
-                                    className="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Editar Perfiles</a>
+                                
+                                    {
+                                        can(user, 'create:superheros') &&
+                                        <a onClick={() => navigate('/profiles')}
+                                            className="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Editar Perfiles</a>
+                                    }
+                                
                                 <a onClick={() => navigate('/about')}
                                     className="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">About</a>
                             </div>
                         </div>
                     </div>
                     <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
-
+                        {user ? (
+                            <>
+                                <span className="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Hola, {user.username || user.email}</span>
+                                <button
+                                    onClick={logout}
+                                    className="bg-red-600 hover:bg-red-700 px-3 py-1 rounded"
+                                >
+                                    Cerrar sesión
+                                </button>
+                            </>
+                        ) : (
+                            <>
+                                <Link
+                                    to="/login"
+                                    className="bg-blue-600 hover:bg-blue-700 px-3 py-1 rounded"
+                                >
+                                    Iniciar sesión
+                                </Link>
+                            </>
+                        )}
                         <div className="relative ml-3">
                             <div>
                                 <button type="button" className="relative flex rounded-full bg-gray-800 text-sm focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800 focus:outline-hidden" id="user-menu-button" aria-expanded="false" aria-haspopup="true">

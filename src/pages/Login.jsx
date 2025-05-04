@@ -1,25 +1,36 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
 import { useAuth } from '../contexts/AuthContext';
-import { useNavigate } from 'react-router-dom';
+import { Navigate, useNavigate } from 'react-router-dom';
+import withReactContent from 'sweetalert2-react-content';
+import Swal from 'sweetalert2';
+
+const MySwal = withReactContent(Swal)
 
 const Login = () => {
     const { register, handleSubmit, formState: { errors } } = useForm()
-    const {login } = useAuth()
-    const navigate= useNavigate()
-    const onSubmit = async (data) => {
-        console.log(data);
-        
-       const success = await login(data.email, data.name)
-       console.log(success)
-       if (success) {
-        navigate('/busqueda')
-        
-       }else{
-        alert('Invalid Credencials')
-       }
-       
+    const { user, login } = useAuth()
+    const navigate = useNavigate()
 
+    if (user) return <Navigate to="/buscar" />
+
+    const onSubmit = async (data) => {
+        const success = await login(data.email, data.password)
+        console.log(success)
+        if (success) {
+            navigate('/buscar')
+
+        } else {
+            MySwal.fire({
+                title: <strong>Error</strong>,
+                html: <i>Usuario o contraseña incorrectos</i>,
+                icon: 'error',
+                confirmButtonText: 'Aceptar',
+                customClass: {
+                    confirmButton: 'bg-blue-500 text-white rounded px-4 py-2'
+                },
+            })
+        }
     }
     return (
         <div className='max-w-md mx-auto mt-10 bg-white p-6 shadow rounded'>
@@ -37,7 +48,7 @@ const Login = () => {
                     type='password'
                     className='w-full border p-2 rounded'
                 />
-                {errors.name && <p className='text-red-500 text-sm' > {errors.name.message}</p>}
+                {errors.password && <p className='text-red-500 text-sm' > {errors.password.message}</p>}
 
                 <button
                     type="submit"

@@ -1,20 +1,22 @@
 import { ToastContainer } from "react-toastify"
 import { ProfileProvider } from "./contexts/ProfileContext"
 import AppRouter from "./Router/AppRouter"
-import Navbar from "./components/Navbar"
 import { AuthProvider } from "./contexts/AuthContext"
+import Navbar from './components/Navbar.jsx'
+import { BrowserRouter } from "react-router-dom"
+
 
 function App() {
   return (
     <ProfileProvider>
-      
-    
-      <Navbar/>
-      <AuthProvider>
-      <AppRouter />
+        <AuthProvider>
+          <BrowserRouter>
+            <Navbar />
+            <AppRouter />
+          </BrowserRouter>
+        <ToastContainer />
     </AuthProvider>
-      <ToastContainer />
-    </ProfileProvider>
+      </ProfileProvider>
   )
 }
 

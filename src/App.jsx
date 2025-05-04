@@ -4,6 +4,7 @@ import AppRouter from "./Router/AppRouter"
 import { AuthProvider } from "./contexts/AuthContext"
 import Navbar from './components/Navbar.jsx'
 import { BrowserRouter } from "react-router-dom"
+import Footer from "./components/Footer.jsx"
 
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
           </BrowserRouter>
         <ToastContainer />
     </AuthProvider>
+    <Footer/>
       </ProfileProvider>
   )
 }

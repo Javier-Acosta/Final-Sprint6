@@ -1,9 +1,8 @@
 // components/ProfileSelector.jsx
 import React from 'react'
-import ProfileCard from './ProfileCard.jsx'
+import ProfileCard from '../components/ProfileCard.jsx'
 import { useProfiles } from '../contexts/ProfileContext.jsx'
-import { Link, useNavigate } from 'react-router-dom'
-import { useAuth } from '../contexts/AuthContext.jsx'
+import { useNavigate } from 'react-router-dom'
 
 
 const ProfileSelector = () => {

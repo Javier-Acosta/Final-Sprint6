@@ -1,15 +1,34 @@
-INSTALACION
-Clonar el repositorio:
+
+# DIPLOMATURA UNIVERSITARIA DESARROLLO WEB FULL STACK CON JAVASCRIPTNodoT
+
+# TP FINAL - -Aplicación para ofrecer servicios de Oficios o Profecionales
+Este desarrollo de proyecto consta de que cualquier persona pueda publicar sus habilidades profecionales, como por ejemplo, Oficios de trabajo o ocupación habitual, generalmente relacionada con procesos manuales o artesanales, que se aprende principalmente a través de la práctica y la experiencia laboral.
+
+```bash
+* la idea es que: sin inicio de sesión, puedes ver todos los perfiles publicados y su contacto. 
+* con inicio de sesión (para futuro configuración modo pago) podrás crear perfiles y cargar tus datos
+* el rol admin, podrás crear, actualizar y eliminar perfiles.
+```
+
+
+# Clonar el repositorio:
 
 git clone [https://github.com/Javier-Acosta/sprint5.git]
 
-Instala las dependencias:
+# Instalar las dependencias:
 
-npm install axios react-router-dom @tailwindcss/vite jwt-decode react-hook-form react-toastify sweetalert2 mongoose sweetalert2-react-content
+npm install axios react-router-dom @tailwindcss/vite jwt-decode react-hook-form react-toastify sweetalert2 mongoose sweetalert2-react-content react-router-dom json-web-token
 
-Inicia el servidor:
+**  `Inicia el servidor: `**
 
+
+```bash
 npm run dev
+```
+
+
+
+
 
 ✅ Estado del Proyecto
 ✔ Arquitectura modular y clara
@@ -18,26 +37,38 @@ npm run dev
 ✔ Rutas implementada react-router-dom
  
 
+## EJEMPLOS DE USOS - ENDPOINTS 
+ 
 
- video 37:40
+**`POST`**
+```bash
+   http://localhost:3000/api/auth/register
+```
 
+ ```bash
+   {
+      "email": "example@hotmail.com",
+      "password": "TuClaverAquí",
+      
+   }
+```
+# Acceso desde la WEb 
 
+**`Clave y Password cliente básico, cliente pago, Administrador de sistema`**
 
+ ```bash
+  Cliente básico
+  email javitoacosta@gmail.com 
+  password chicho
+```
+ ```bash
+  Cliente pago
+  email javitoacosta@hotmail.com
+  password chicho
+```
+ ```bash
+  Administrador de Sistema
+  email jacosta@hotmail.com 
+  password chicho
+```
 
- "@tailwindcss/vite": "^4.1.3",
-    "axios": "^1.8.4",
-    "json-web-token": "^3.2.0",
-    "jwt-decode": "^4.0.0",
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0",
-    "react-hook-form": "^7.56.1",
-    "react-router-dom": "^7.5.0",
-    "react-toastify": "^11.0.5",
-    "sweetalert2": "^11.18.0",
-    "tailwindcss": "^4.1.3"
-
-
-
-
-para server repo nodo
-    npm i nodemon mongoose winston jsonwebtoken express-validator express dotenv cors bcryptjs

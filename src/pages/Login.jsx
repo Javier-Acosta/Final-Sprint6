@@ -32,9 +32,10 @@ const Login = () => {
             })
         }
     }
+    
     return (
-        <div className='max-w-md mx-auto mt-10 bg-white p-6 shadow rounded'>
-            <h1 className='text-2xl font-bold mb-4'>Iniciar Sesion </h1>
+        <div className='min-h-screen flex flex-col items-center justify-center bg-gray-900 text-white  shadow-xl  rounded-lg px-6 py-8 ring ring-gray-900/5 '>
+            <h1 className='text-2xl font-bold mb-4'>Iniciar Sesión </h1>
             <form onSubmit={handleSubmit(onSubmit)} className=' space-y-4'>
                 <input
                     {...register('email', { required: "Email Requerido" })}

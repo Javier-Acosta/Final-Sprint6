@@ -27,6 +27,7 @@ const AppRouter = () => {
           }
         />
 
+
         <Route path='/buscar' element={<SearchForm />} />
 
         <Route path='/vista/:id' element={<ProfileVista />}/>

@@ -9,11 +9,15 @@ Este desarrollo de proyecto consta de que cualquier persona pueda publicar sus h
 * con inicio de sesión (para futuro configuración modo pago) podrás crear perfiles y cargar tus datos
 * el rol admin, podrás crear, actualizar y eliminar perfiles.
 ```
+# Deploys
 
+```bash
+catamarca.netlify.app
+```
 
 # Clonar el repositorio:
 
-git clone [https://github.com/Javier-Acosta/sprint5.git]
+git clone [https://github.com/Javier-Acosta/Final-Sprint6.git]
 
 # Instalar las dependencias:
 

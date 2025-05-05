@@ -43,7 +43,7 @@ const ProfileCreate = () => {
         >
           <input
             type='text'
-            placeholder='Name'
+            placeholder='Nombre'
             value={name}
             onChange={(e) => setName(e.target.value)}
             className='p-2 rounded bg-gray-700 text-white'

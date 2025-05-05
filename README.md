@@ -49,6 +49,11 @@ npm run dev
    http://localhost:3000/api/auth/register
 ```
 
+```bash
+   /auth/login
+```
+
+
  ```bash
    {
       "email": "example@hotmail.com",

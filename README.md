@@ -1,14 +1,14 @@
-
 # DIPLOMATURA UNIVERSITARIA DESARROLLO WEB FULL STACK CON JAVASCRIPTNodoT
 
-# TP FINAL - -Aplicación para ofrecer servicios de Oficios o Profecionales
-Este desarrollo de proyecto consta de que cualquier persona pueda publicar sus habilidades profecionales, como por ejemplo, Oficios de trabajo o ocupación habitual, generalmente relacionada con procesos manuales o artesanales, que se aprende principalmente a través de la práctica y la experiencia laboral.
+# TP FINAL - Bolsa de Trabajo - Aplicación para ofrecer servicios de Oficios o Profecionales
+Este desarrollo de proyecto "Bolsa de Trabajo" consta de que cualquier persona pueda publicar sus habilidades profecionales, como por ejemplo, Oficios de trabajo o ocupación habitual, generalmente relacionada con procesos manuales o artesanales, que se aprende principalmente a través de la práctica y la experiencia laboral.
 
 ```bash
-* la idea es que: sin inicio de sesión, puedes ver todos los perfiles publicados y su contacto. 
-* con inicio de sesión (para futuro configuración modo pago) podrás crear perfiles y cargar tus datos
+* la idea es que: sin iniciar sesión, puedes ver todos los perfiles publicados y su contacto. no podrás crear, actualizar y borrar. 
+* con inicio de sesión (para futura configuración, sesión modo de pago) podrás crear perfiles y cargar tus datos.
 * el rol admin, podrás crear, actualizar y eliminar perfiles.
 ```
+
 # Deploys
 
 ```bash

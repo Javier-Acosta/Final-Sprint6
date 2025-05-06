@@ -10,6 +10,7 @@ import SearchForm from '../pages/SearchForm'
 import ProfileVista from '../pages/ProfileVista'
 import Login from '../pages/Login'
 import PrivateRoute from './PrivateRoute'
+import User from '../pages/User'
 
 const AppRouter = () => {
   return (
@@ -17,6 +18,7 @@ const AppRouter = () => {
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/about' element={<About />} />
+        <Route path="/register" element={<User />} />
         <Route path='/profiles'
           element={
             <PrivateRoute>

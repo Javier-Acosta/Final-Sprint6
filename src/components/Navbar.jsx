@@ -43,6 +43,18 @@ const Navbar = () => {
             link: "/about"
 
         },
+        {
+            id: 5,
+            title: "Registrar",
+            link: "/register"
+
+        },
+        {
+            id: 6,
+            title: "Inicio Sesion",
+            link: "/login"
+
+        },
     ]
 
     return (
@@ -97,16 +109,16 @@ const Navbar = () => {
 
                                 <a onClick={() => navigate('/')}
                                     className="rounded-md bg-gray-900 px-3 py-2 text-sm font-medium text-white">Home</a>
-                                    
+
                                 <a onClick={() => navigate('/buscar')}
                                     className="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Bolsa de Trabajo</a>
-                                
-                                    {
-                                        can(user, 'update:cliente') &&
-                                        <a onClick={() => navigate('/profiles')}
-                                            className="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Editar Perfiles</a>
-                                    }
-                                
+
+                                {
+                                    can(user, 'update:cliente') &&
+                                    <a onClick={() => navigate('/profiles')}
+                                        className="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Editar Perfiles</a>
+                                }
+
                                 <a onClick={() => navigate('/about')}
                                     className="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">About</a>
                             </div>
@@ -127,11 +139,18 @@ const Navbar = () => {
                             <>
                                 <Link
                                     to="/login"
-                                    className="bg-blue-600 hover:bg-blue-700 px-3 py-1 rounded"
+                                    className="bg-blue-600 hover:bg-blue-700 px-3 mr-4 py-1 rounded"
                                 >
                                     Iniciar sesión
                                 </Link>
+                                <Link
+                                    to="/register"
+                                    className="bg-blue-600 hover:bg-blue-700 px-3 py-1 rounded"
+                                >
+                                    Registrar
+                                </Link>
                             </>
+
                         )}
                         <div className="relative ml-3">
                             <div>
